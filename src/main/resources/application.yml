@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 10000
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+        generate_statistics: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  application:
+    name: ProjectionsDemo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library?reWriteBatchedInserts=true
+    username: postgres
+    password: postgres

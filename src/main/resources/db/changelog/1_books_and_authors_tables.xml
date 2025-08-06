@@ -1,0 +1,39 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.10.xsd">
+
+  <changeSet id="create-authors-table" author="your_name">
+    <createTable tableName="authors">
+      <column name="id" type="UUID">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="create-books-table" author="your_name">
+    <createTable tableName="books">
+      <column name="id" type="UUID">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="isbn" type="VARCHAR(20)">
+<!--        <constraints nullable="false" unique="true"/>-->
+      </column>
+      <column name="title" type="TEXT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="number_of_pages" type="INT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="printed_authors" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>
